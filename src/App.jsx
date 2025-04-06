@@ -9,6 +9,9 @@ import Post from './Post';
 import TagButton from './TagButton';
 import PropsChallenge from './PropsChallenge';
 import StateTest from "./StateTest";
+import MyForm from "./MyForm";
+
+
 function App() {
  
   return (
@@ -30,6 +33,9 @@ function App() {
       <li style={{ marginRight: '10px' }}>
         <Link to="/stateTest">StateTest</Link>
       </li>
+      <li style={{ marginRight: '10px' }}>
+        <Link to="/myForm">MyForm</Link>
+      </li>
     </ul>
      
 
@@ -39,7 +45,7 @@ function App() {
         <Route path="/challenge" element={<Challenge />} />
         <Route path="/propsChallenge" element={<PropsChallenge />} />
         <Route path="/stateTest" element={<StateTest />} />
-
+        <Route path="/myForm" element={<MyForm />} />
       </Routes>
 
     </>
