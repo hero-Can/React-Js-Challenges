@@ -2,7 +2,11 @@ import React, { useState } from "react";
 
 function MyForm() {
    
-    const [formInputs,setFormInputs] = useState({name :"",email: ""});
+    const [formInputs,setFormInputs] = useState({name :"",email: "",description:"",isStudent: false});
+
+    function handleCheckboxChanged(event){
+      setFormInputs({...formInputs,isStudent: event.target.checked});
+    }
 
     return (
       <div className="flex justify-center items-center mt-6">
@@ -59,7 +63,35 @@ function MyForm() {
               placeholder="Enter your email"
             />
           </div>
+
+          {/* Description  textarea */}
+          <div className="mb-4">
+            <label
+              htmlFor="description"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Description
+            </label>
+            <textarea
+              type="text"
+              id="description"
+              name="description"
+              value={formInputs.description}
+              onChange={(event) => {
+                setFormInputs({...formInputs,description: event.target.value});
+              }}
+              className="mt-2 p-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              placeholder="Enter your Description"
+            />
+              
+          </div>
   
+          <label
+              htmlFor="description"
+              className="block text-sm font-medium text-gray-700"
+            >Are you Student
+            </label>
+          <input type="checkbox" checked={formInputs.isStudent} onChange={handleCheckboxChanged}/>
           {/* Submit Button */}
           <div className="mb-4">
             <button
