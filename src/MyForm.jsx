@@ -39,7 +39,7 @@ function MyForm() {
             name="name"
             value={formInputs.name}
             onChange={(event) => {
-              setFormInputs({ ...formInputs, name: event.target.value });
+              setFormInputs({ ...formInputs, name: event.target.value }); // spread syntax
               // let copyFormInputs = {...formInputs}; // make a copy of formInputs to avoid call by references because it is an object
               // copyFormInputs.name = event.target.value;
               // setFormInputs(copyFormInputs);
