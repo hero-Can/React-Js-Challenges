@@ -4,7 +4,12 @@ function ToDoList() {
     let [inputValue,setInputValue] = useState("");
     const [notes, setNotes] = useState(["note 1", "note 2"]);
     let notesList = notes.map((note,index)=>{
-        return (<li key={index}>{note} <button className="ml-2 bg-gray-400 hover:bg-gray-600 text-white px-3 py-1 rounded-md text-sm font-semibold transition duration-200 my-1" onClick={() => {deleteNote(index)}}>X</button></li>)
+        return (<li key={index}>{note} <button className="ml-2 bg-gray-400 hover:bg-gray-600 text-white px-3 py-1 rounded-md text-sm font-semibold transition duration-200 my-1" onClick={() => {deleteNote(index)}}>X</button> <button
+        onClick={() => handleEdit(index)}
+        className="ml-2 bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-md text-sm font-semibold transition duration-200"
+      >
+        Edit
+      </button></li>)
     })
 
     function AddNote () {
@@ -24,6 +29,13 @@ function ToDoList() {
       copyNotes.splice(index,1);
       setNotes(copyNotes);
       // console.log(index)
+    }
+
+    function handleEdit(indexToEdit){
+      const updatedNotes = notes.map((note, index) =>
+        index === indexToEdit ? note + "e" : note
+      );
+      setNotes(updatedNotes);
     }
 
   return (
