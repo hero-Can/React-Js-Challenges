@@ -12,7 +12,7 @@ import StateTest from "./StateTest";
 import MyForm from "./MyForm";
 import Challenge3 from "./Challenge3";
 import ToDoList from './ToDoList';
-
+import ShoppingCart from './ShoppingCart';
 
 function App() {
  
@@ -44,6 +44,9 @@ function App() {
       <li style={{ marginRight: '10px' }}>
         <Link to="/todolist">To-Do-List</Link>
       </li>
+      <li style={{ marginRight: '10px' }}>
+        <Link to="/shoppingCart">ShoppingCart</Link>
+      </li>
     </ul>
      
 
@@ -56,6 +59,7 @@ function App() {
         <Route path="/myForm" element={<MyForm />} />
         <Route path="/challenge3" element={<Challenge3 />} />
         <Route path="/todolist" element={<ToDoList />} />
+        <Route path="/shoppingCart" element={<ShoppingCart />} />
       </Routes>
 
     </>
