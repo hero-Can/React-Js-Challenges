@@ -14,6 +14,7 @@ import Challenge3 from "./Challenge3";
 import ToDoList from './ToDoList';
 import ShoppingCart from './ShoppingCart';
 import RequestTracker from './RequestTracker';
+import LoanApplicationForm from './LoanApplicationForm';
 
 function App() {
  
@@ -51,6 +52,9 @@ function App() {
       <li style={{ marginRight: '10px' }}>
         <Link to="/requestTracker">RequestTracker</Link>
       </li>
+      <li style={{ marginRight: '10px' }}>
+        <Link to="/loanApplicationForm">LoanApplicationForm</Link>
+      </li>
     </ul>
      
 
@@ -65,6 +69,7 @@ function App() {
         <Route path="/todolist" element={<ToDoList />} />
         <Route path="/shoppingCart" element={<ShoppingCart />} />
         <Route path="/requestTracker" element={<RequestTracker />} />
+        <Route path="/loanApplicationForm" element={<LoanApplicationForm />} />
       </Routes>
 
     </>
