@@ -96,6 +96,7 @@ export default function LoanApplicationForm(){
       );
   }
 
+  let disabeld = user.name == "" || user.age == "" || user.phone== "";
 
  return (
  <>
@@ -144,7 +145,7 @@ export default function LoanApplicationForm(){
 
             
             <div className="mt-6">
-                <button type="submit" className="w-full py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-opacity-50" onClick={handleSubmit} disabled={user.name == "" && user.age == "" && user.phone== ""}>Submit</button>
+                <button type="submit" className={disabeld ? `w-full py-3 bg-pink-600 text-white rounded-lg font-semibold hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-600 focus:ring-opacity-50`: `w-full py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-opacity-50`} onClick={handleSubmit} disabled={disabeld}>Submit</button>
             </div>
             {/* Render the modal when isModalOpen is true */}
             {isModalOpen && modal(modalMessage,colorMessage)}
