@@ -12,6 +12,7 @@ export default function LoanApplicationForm(){
 
     const [modalMessage, setModalMessage] = useState(""); // State for dynamic message
     const [colorMessage, setColorMessage] = useState(""); // State for dynamic message
+   
 
     function handleName(event){
         setUser({...user,name : event.target.value})
@@ -41,6 +42,7 @@ export default function LoanApplicationForm(){
             setModalMessage("Age not valid")
             setColorMessage("text-red-500")
         }
+        
         else {
             setIsModalOpen(true); // Open modal
             setModalMessage("Form submitted successfully!")
@@ -94,9 +96,10 @@ export default function LoanApplicationForm(){
       );
   }
 
+
  return (
  <>
- <div className="bg-gray-200 flex justify-center items-center h-screen">
+ <div className="bg-gray-200 flex justify-center items-center h-screen mt-5">
     <div className="w-full max-w-lg p-6 bg-white rounded-lg shadow-lg">
         <h2 className="text-2xl font-bold text-center mb-6 text-gray-800">Employee Information Form</h2>
         
@@ -140,8 +143,8 @@ export default function LoanApplicationForm(){
             </div>
 
             
-            <div className="mt-6" onClick={handleSubmit}>
-                <button type="submit" className="w-full py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-opacity-50">Submit</button>
+            <div className="mt-6">
+                <button type="submit" className="w-full py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-opacity-50" onClick={handleSubmit} disabled={user.name == "" && user.age == "" && user.phone== ""}>Submit</button>
             </div>
             {/* Render the modal when isModalOpen is true */}
             {isModalOpen && modal(modalMessage,colorMessage)}
